@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <title>Shop - Cycle</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700,800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header_section header_bg">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 18px; padding-bottom: 18px;">
+        <a href="index.html" class="logo"><img src="images/logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto" style="margin-left: 18px;">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="cycleLink" href="cycle.html">Our Cycle</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" id="shopLink" href="shop.html">Shop</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" style="margin-left: 24px;">
+            <div class="login_menu">
+              <ul>
+                <li><a href="login.html">Login</a></li>
+              </ul>
+            </div>
+            <div></div>
+          </form>
+        </div>
+        <div id="main">
+          <span
+            style="font-size: 36px; cursor: pointer; color: #fff"
+            onclick="openNav()"
+            ><img src="images/toggle-icon.png" style="height: 30px"
+          /></span>
+        </div>
+      </nav>
+    </div>
+
+    <div class="shop_section">
+      <div class="container">
+        <h1 class="shop_title">Our Products</h1>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="filter_section">
+              <h3 class="filter_title">Filters</h3>
+              <div class="filter_option">
+                <input type="checkbox" class="filter_checkbox" id="mountain">
+                <label for="mountain">Mountain Bikes</label>
+              </div>
+              <div class="filter_option">
+                <input type="checkbox" class="filter_checkbox" id="road">
+                <label for="road">Road Bikes</label>
+              </div>
+              <div class="filter_option">
+                <input type="checkbox" class="filter_checkbox" id="electric">
+                <label for="electric">Electric Bikes</label>
+              </div>
+              <div class="filter_option">
+                <input type="checkbox" class="filter_checkbox" id="accessories">
+                <label for="accessories">Accessories</label>
+              </div>
+            </div>
+            <select class="sort_select">
+              <option value="">Sort By</option>
+              <option value="price_low">Price: Low to High</option>
+              <option value="price_high">Price: High to Low</option>
+              <option value="name">Name: A to Z</option>
+            </select>
+          </div>
+
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="product_card">
+                  <img src="images/image-2.webp" class="product_image" alt="Mountain Bike">
+                  <h3 class="product_title">Aspero-5</h3>
+                  <p class="product_price">$4,499.00</p>
+                  <p class="product_description">High-performance mountain bike with advanced suspension system.</p>
+                  <button class="buy_btn" onclick="location.href='purchase.html?name=Aspero-5&image=images/image-2.webp&price=4499.00'">Add to Cart</button>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="product_card">
+                  <img src="images/image-3.webp" class="product_image" alt="Road Bike">
+                  <h3 class="product_title">R5</h3>
+                  <p class="product_price">$8,589.00</p>
+                  <p class="product_description">Lightweight road bike perfect for speed and endurance.</p>
+                  <button class="buy_btn" onclick="location.href='purchase.html?name=R5&image=images/image-3.webp&price=8589.00'">Add to Cart</button>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="product_card">
+                  <img src="images/image-4.webp" class="product_image" alt="Electric Bike">
+                  <h3 class="product_title">Hightower 90</h3>
+                  <p class="product_price">$5,899.00</p>
+                  <p class="product_description">Electric bike with long-lasting battery and powerful motor.</p>
+                  <button class="buy_btn" onclick="location.href='purchase.html?name=Hightower 90&image=images/image-4.webp&price=5899.00'">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_section layout_padding">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 col-sm-12 padding_0">
+            <div class="map_main">
+              <div class="map-responsive">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3110.1943339162542!2d121.96168997381669!3d6.954156392497492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32503f06397f3f1b%3A0x4f1689e38dfdbe85!2sBuhari%20Residence!5e1!3m2!1sen!2sph!4v1736676502137!5m2!1sen!2sph"
+                  width="600"
+                  height="400"
+                  frameborder="0"
+                  style="border: 0; width: 100%"
+                  allowfullscreen=""
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-12">
+            <div class="call_text">
+              <a href="#"
+                ><img src="images/map-icon.png" /><span class="padding_left_0"
+                  >Location</span
+                ></a
+              >
+            </div>
+            <div class="call_text">
+              <a href="#"
+                ><img src="images/call-icon.png" /><span class="padding_left_0"
+                  >Call Now +63 1234678901</span
+                ></a
+              >
+            </div>
+            <div class="call_text">
+              <a href="#"
+                ><img src="images/mail-icon.png" /><span class="padding_left_0"
+                  >Jazzper@gmail.com</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright_section">
+      <div class="container">
+        <p class="copyright_text">Copyright 2025 All Right Reserved</p>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+      }
+
+      $("#main").click(function() {
+        $("#navbarSupportedContent").toggleClass("nav-normal");
+      });
+    </script>
+  </body>
+</html>

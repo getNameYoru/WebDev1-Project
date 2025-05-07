@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+    <!-- site metas -->
+    <title>Purchase</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <!-- style css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700,800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header_section header_bg">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class='logo' href='/'>
+          <img src="images/logo.png" width="112" height="112" style="width: 112px; height: 90px;" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class='nav-link' href='/'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class='nav-link' href='/cycle'>Our Cycle</a>
+            </li>
+            <li class="nav-item">
+              <a class='nav-link' href='/shop'>Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <div class="login_menu">
+              <ul>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Welcome, User
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class='dropdown-item' href='/login'>Logout</a>
+                  </div>
+                </li>
+                <li>
+                  <a href="#"><img src="images/trolly-icon.png" /></a>
+                </li>
+                <li>
+                  <a href="#"><img src="images/search-icon.png" /></a>
+                </li>
+              </ul>
+            </div>
+          </form>
+        </div>
+        <div id="main">
+          <span
+            style="font-size: 36px; cursor: pointer; color: #fff"
+            onclick="openNav()"
+            ><img src="images/toggle-icon.png" style="height: 30px"
+          /></span>
+        </div>
+      </nav>
+    </div>
+    <div class="purchase_section layout_padding">
+      <div class="container">
+        <h1 class="purchase_title">Purchase Form</h1>
+        <div class="form-container">
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="productName">Product Name</label>
+              <input type="text" class="form-control" id="productName" placeholder="Enter product name" readonly />
+            </div>
+            <div class="form-group">
+              <label for="productImage">Product Image</label>
+              <img id="productImage" src="" alt="Product Image" class="product-image" />
+            </div>
+            <div class="form-group">
+              <label for="productPrice">Price</label>
+              <input type="text" class="form-control" id="productPrice" placeholder="Enter product price" readonly />
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" class="form-control" id="quantity" placeholder="Enter quantity" required />
+            </div>
+            <div class="form-group">
+              <label for="customerName">Customer Name</label>
+              <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required />
+            </div>
+            <div class="form-group">
+              <label for="customerEmail">Email address</label>
+              <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email" required />
+            </div>
+            <div class="form-group">
+              <label for="region">Region</label>
+              <select class="form-control" id="region" required>
+                <option value="">Select Region</option>
+                <option value="Mindanao">Mindanao</option>
+                <option value="Luzon">Luzon</option>
+                <option value="Visayas">Visayas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" placeholder="Enter city" required />
+            </div>
+            <div class="form-group">
+              <label for="barangay">Barangay</label>
+              <input type="text" class="form-control" id="barangay" placeholder="Enter barangay" required />
+            </div>
+            <div class="form-group">
+              <label for="paymentMethod">Payment Method</label>
+              <select class="form-control" id="paymentMethod" onchange="toggleCardDetails()" required>
+                <option value="cod">Cash on Delivery</option>
+                <option value="card">Card</option>
+              </select>
+            </div>
+            <div class="card-details">
+              <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number" required />
+              </div>
+              <div class="form-group">
+                <label for="expirationDate">Expiration Date</label>
+                <input type="text" class="form-control" id="expirationDate" placeholder="MM/YY" required />
+              </div>
+              <div class="form-group">
+                <label for="cvv">CVV/CVC</label>
+                <input type="text" class="form-control" id="cvv" placeholder="Enter CVV/CVC" required />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      }
+
+      document.getElementById('productName').value = getUrlParameter('name');
+      document.getElementById('productImage').src = getUrlParameter('image');
+      document.getElementById('productPrice').value = getUrlParameter('price');
+
+      function toggleCardDetails() {
+        const paymentMethod = document.getElementById('paymentMethod').value;
+        const cardDetails = document.querySelector('.card-details');
+        if (paymentMethod === 'card') {
+          cardDetails.style.display = 'block';
+          document.getElementById('cardNumber').required = true;
+          document.getElementById('expirationDate').required = true;
+          document.getElementById('cvv').required = true;
+        } else {
+          cardDetails.style.display = 'none';
+          document.getElementById('cardNumber').required = false;
+          document.getElementById('expirationDate').required = false;
+          document.getElementById('cvv').required = false;
+        }
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        const requiredFields = document.querySelectorAll('input[required], select[required]');
+        for (let field of requiredFields) {
+          if (!field.value) {
+            alert('Please fill out all required fields.');
+            return;
+          }
+        }
+        alert("Purchase done, wait for the email for the confirmation.");
+        window.location.href = 'shop.html';
+      }
+
+      toggleCardDetails();
+    </script>
+  </body>
+</html>

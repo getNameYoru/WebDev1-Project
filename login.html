@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Cycle</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Raleway:400,700,800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="header_section">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="images/logo.png" width="112" height="80" style="width: 112px; height: 80px;" />
+      </nav>
+    </div>
+    <div class="login_section">
+      <div class="container">
+        <div class="login_form">
+          <h2 class="login_title">Login to Your Account</h2>
+          <form id="loginForm" action="#" method="POST" onsubmit="return validateAndSubmit(event)">
+            <input type="email" id="email" class="form_input" placeholder="Email Address" required autocomplete="username">
+            <input type="password" id="password" class="form_input" placeholder="Password" required autocomplete="current-password">
+            <div id="errorMessage" class="error-message">Invalid email or password. Please try again.</div>
+            <button type="submit" class="login_btn">Login</button>
+            <div id="loading" class="loading">
+              <div class="loading-spinner"></div>
+              <p style="margin:0;font-size:0.98rem;">Verifying your credentials...</p>
+            </div>
+          </form>
+          <div class="forgot_password">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <div class="create_account">
+            <a class='create_account_link' href='create.account.html'>Create New Account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright_section">
+      <div class="container">
+        <p class="copyright_text">Copyright 2025 All Right Reserved</p>
+      </div>
+    </div>
+
+    <script>
+      function validateAndSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('errorMessage');
+        const loading = document.getElementById('loading');
+        errorMessage.style.display = 'none';
+        loading.style.display = 'block';
+        // Get users from localStorage
+        const localUsers = JSON.parse(localStorage.getItem('users') || '[]');
+        // Default users
+        const validUsers = [
+          { email: 'admin@gmail.com', password: 'admin' },
+          { email: 'user@example.com', password: 'password123' },
+          { email: 'customer@bicycleria.com', password: 'bicycle2023' }
+        ];
+        setTimeout(function() {
+          // Check if credentials match default or local users
+          const user = validUsers.concat(localUsers).find(user => 
+            user.email === email && user.password === password
+          );
+          if (user) {
+            sessionStorage.setItem('loggedIn', 'true');
+            sessionStorage.setItem('userEmail', email);
+            if (email === 'admin@gmail.com') {
+              window.location.href = 'admindashboard.html';
+            } else {
+              window.location.href = 'index.html';
+            }
+          } else {
+            errorMessage.style.display = 'block';
+            loading.style.display = 'none';
+          }
+        }, 1500);
+        return false;
+      }
+      
+      // Check if user is already logged in
+      window.onload = function() {
+        if (sessionStorage.getItem('loggedIn') === 'true') {
+          const userEmail = sessionStorage.getItem('userEmail');
+          if (userEmail === 'admin@gmail.com') {
+            window.location.href = 'admindashboard.html';
+          } else {
+            window.location.href = 'index.html';
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
